@@ -1,6 +1,6 @@
 @keyframes button-slide-right {
    from {
-      transform: translateX(120%);
+      transform: translateX(130%);
    } to {
       transform: translateX(0%);
    }
@@ -8,11 +8,22 @@
 
 @keyframes button-slide-left {
    from {
-      transform: translateX(-120%);
+      transform: translateX(-130%);
    } to {
       transform: translateX(0%);
    }
 }
+
+@keyframes home-page-slide-bottom {
+   from {
+      transform: translateY(120%);
+      opacity: 0;
+   } to {
+      transform: translateY(0%);
+      opacity: 1;
+   }
+}
+
 body {
    margin: 0 !important; 
    padding: 0 !important;
@@ -21,15 +32,17 @@ body {
 }
 
 .company-logo {
-    animation-name: button-slide-left;
-    animation-duration: 800ms;
+   animation-name: button-slide-left;
+   animation-duration: 1s;
+   animation-timing-function: ease-in-out;
    width: 15vw;
    margin-left: 2vw;
 }
 
 .booking-button {
    animation-name: button-slide-right;
-   animation-duration: 800ms;
+   animation-duration: 1s;
+   animation-timing-function: ease-in-out;
    margin-right: 2vw;
    padding: 1.25vw 2vw;
    border-radius: 2vw;
@@ -60,6 +73,8 @@ body {
    flex-direction: column;
    justify-content: space-evenly;
    align-items: center;
+   animation-name: home-page-slide-bottom;
+   animation-timing-function: ease-in-out;
 }
 
 .homepage-booking-container p, .homepage-booking-container h3, .homepage-booking-container button {
