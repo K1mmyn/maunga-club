@@ -1,16 +1,20 @@
 @keyframes button-slide-right {
    from {
       transform: translateX(130%);
+      opacity: 0;
    } to {
       transform: translateX(0%);
+      opacity: 1;
    }
 }
 
 @keyframes button-slide-left {
    from {
       transform: translateX(-130%);
+      opacity: 0;
    } to {
       transform: translateX(0%);
+      opacity: 1;
    }
 }
 
@@ -56,7 +60,7 @@ body {
    transition-duration: 200ms;
 }
 
-.booking-button:hover {
+.booking-button:hover, .homepage-booking-container-button:hover{
    background: black;
    transition-duration: 250ms;
 }
@@ -75,6 +79,12 @@ body {
    align-items: center;
    animation-name: home-page-slide-bottom;
    animation-timing-function: ease-in-out;
+   transition-duration: 200ms;
+}
+
+.homepage-booking-container:hover {
+   transform: translateY(-10%);
+   transition-duration: 200ms;
 }
 
 .homepage-booking-container p, .homepage-booking-container h3, .homepage-booking-container button {
@@ -90,4 +100,5 @@ body {
    font-weight: 700;
    border-radius: 1.5vw;
    cursor: pointer;
+   transition-duration: 200ms;
 }
