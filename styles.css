@@ -28,11 +28,23 @@
    }
 }
 
+@keyframes slide-up {
+   from {
+      transform: translateY(75%);
+      opacity: 0;
+   }
+   to {
+      transform: translateY(0%);
+      opacity: 1;
+   }   
+}
+
 body {
    margin: 0 !important; 
    padding: 0 !important;
    font-family: 'Belanosima', sans-serif;
    font-family: 'Inter', sans-serif;
+   overscroll-behavior: none !important;
 }
 
 .company-logo {
@@ -101,4 +113,10 @@ body {
    border-radius: 1.5vw;
    cursor: pointer;
    transition-duration: 200ms;
+}
+
+.about-slide-header, .about-slide-paragraph {
+   animation-name: slide-up;
+   animation-duration: 1s;
+   animation-timing-function: ease-in-out;
 }
