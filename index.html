@@ -10,6 +10,7 @@
    <link
       href="https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet">
+   <script src="aboutSlideAndCabinRender.js" defer></script>
 </head>
 <body style="background-color: #90b4ce;">
    <section style="border-color: black; border-width: 2px; width: 100vw; height: 100vh; background-image: url('/images/mountain_view_1.jpg'); background-repeat: no-repeat; background-size: cover; background-position: top; background-color: grey; background-blend-mode: multiply; position: relative; background-attachment: fixed;">
@@ -81,18 +82,11 @@
             &larr;
          </div>
       </div>
-      <div style="align-self: flex-start; width: 60vw;">
-         <div style="display: flex; flex-direction: column; justify-content: start; align-items: center; padding: 0vw 5vw;" >
-            <h1 style="font-size: 5vw; " class="about-slide-header">MAUNGA CLUB</h1>
-            <h3 style="font-size: 1.5vw; text-align: center; color: #5f6c7b;" class="about-slide-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-               dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-               book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
-               unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-               recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h3>
-         </div>
+      <div style="align-self: flex-start; width: 60vw;" id="about-slide">
+         test
       </div>
       <div style="cursor: pointer; padding-right: 5vw;">
-         <div style="font-size: 2vw; color: white; background-color: #3da9fc; border: none; padding: 1vw 1.25vw; border-radius: 20vw; ">
+         <div style="font-size: 2vw; color: white; background-color: #3da9fc; border: none; padding: 1vw 1.25vw; border-radius: 20vw; " onclick="render()">
             &rarr;
          </div>
       </div>
@@ -168,7 +162,5 @@
          </div>
       </div>
    </section>
-
-
 </body>
 </html>
