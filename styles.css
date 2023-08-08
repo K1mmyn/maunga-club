@@ -18,6 +18,16 @@
    }
 }
 
+@keyframes feature-slide-left {
+   from {
+      transform: translateX(-80%);
+      opacity: 0;
+   } to {
+      transform: translateX(0%);
+      opacity: 1;
+   }
+}
+
 @keyframes home-page-slide-bottom {
    from {
       transform: translateY(120%);
@@ -119,13 +129,12 @@ body {
    transition-duration: 200ms;
 }
 
-.about-slide-header, .about-slide-paragraph {
-   animation-name: slide-up;
-   animation-duration: 1s;
-   animation-timing-function: ease-in-out;
+.about-slide-header, .about-slide-paragraph, .cabin-about-paragraph{
+   animation: slide-up 1s ease-in-out ;
 }
 
 .feature-container{
+   animation: slide-up ease-in-out ;
    cursor: pointer;
    background-color: white;
    border-radius: 0.5vw;
@@ -143,6 +152,7 @@ body {
 }
 
 .feature-description{
+   animation-name: feature-slide-left;
    margin: 0;
    font-size: 1vw;
 }
