@@ -45,14 +45,56 @@ const aboutSlideAndCabinSlideData = [
    {
       cabinName: "kererū",
       cabinPreviewSRCPath: "images/kereru/cabin_exterior.jpg",
-      cabinFeatures: [],
-      cabinAboutParagraph: "",
+      cabinFeatures: [
+         {
+            featureIconSRCPath: "images/icons/adults_icon.png",
+            featureDescription: "1 - 2",
+            featureBubble: "Number of Adults",
+         },
+         {
+            featureIconSRCPath: "images/icons/checkmark_icon.png",
+            featureDescription: "Great for Families",
+            featureBubble: "Excellent option for small families",
+         },
+         {
+            featureIconSRCPath: "images/icons/children_icon.png",
+            featureDescription: "2 - 4",
+            featureBubble: "Number of Children",
+         },
+         {
+            featureIconSRCPath: "images/icons/checkmark_icon.png",
+            featureDescription: "Great for Groups",
+            featureBubble: "Excellent option for small groups",
+         },
+      ],
+      cabinAboutParagraph: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
    },
    {
       cabinName: "kākāpo",
       cabinPreviewSRCPath: "images/kakapo/cabin_exterior.jpg",
-      cabinFeatures: [],
-      cabinAboutParagraph: "",
+      cabinFeatures: [
+         {
+            featureIconSRCPath: "images/icons/adults_icon.png",
+            featureDescription: "6 - 10",
+            featureBubble: "Number of Adults",
+         },
+         {
+            featureIconSRCPath: "images/icons/checkmark_icon.png",
+            featureDescription: "Largest",
+            featureBubble: "Largest Cabin Available",
+         },
+         {
+            featureIconSRCPath: "images/icons/children_icon.png",
+            featureDescription: "20 - 30",
+            featureBubble: "Number of Children",
+         },
+         {
+            featureIconSRCPath: "images/icons/checkmark_icon.png",
+            featureDescription: "Kitchen, Dining & Living",
+            featureBubble: "Best option for large groups",
+         },
+      ],
+      cabinAboutParagraph: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
    },
 ];
 
