@@ -1,14 +1,3 @@
-// About slide local databas
-
-// cabinName: "pūkeko" | "kererū" | "kākāpo";
-// cabinPreviewSRCPath: string;
-// cabinFeatures: CabinFeature[];
-// cabinAboutParagraph: string;
-
-// accessoryIconSRCPath: string;
-// accessoryName: string;
-// accessoryBubble: string;
-
 const aboutSlideAndCabinSlideData = [
    {
       companyName: "Maunga Club",
@@ -101,7 +90,13 @@ const aboutSlideAndCabinSlideData = [
 
 
 let counter = 0;
+let currentAuthMode = "";
 const aboutSlide = document.querySelector("#about-slide");
+
+const changeAuthMode = (authModeID) => {
+   currentAuthMode = authModeID;
+   console.log(currentAuthMode)
+}
 
 // About slide & cabin rendering function
 
@@ -110,7 +105,7 @@ const render = () => {
 
       // About slide render
 
-      aboutSlide.innerHTML = `<div style="display: flex; flex-direction: column; justify-content: start; align-items: center; padding: 0vw 5vw;" >
+      return aboutSlide.innerHTML = `<div style="display: flex; flex-direction: column; justify-content: start; align-items: center; padding: 0vw 5vw;" >
             <h1 style="font-size: 5vw; color: #094067; " class="about-slide-header">${aboutSlideAndCabinSlideData[counter].companyName}</h1>
             <h3 style="font-size: 1.5vw; text-align: center; color: #5f6c7b;" class="about-slide-paragraph">${aboutSlideAndCabinSlideData[counter].aboutParagraph}</h3>
          </div>
@@ -142,9 +137,7 @@ const render = () => {
 
    }
 
-   console.log(features)
-
-   aboutSlide.innerHTML = `
+   return aboutSlide.innerHTML = `
       <div style="display: flex; flex-direction: column; align-items: center;">
             <div style="display: flex; justify-content: space-around; width: 100%;">
                <img alt="cabin-photo" src="${aboutSlideAndCabinSlideData[counter].cabinPreviewSRCPath}" style="width: 20vw; height: 20vw; border: 1vw solid white; border-radius: 1.5vw; align-self: flex-end; animation-name: slide-up; animation-duration: 1.2s;"/>
@@ -175,7 +168,7 @@ const counterFunc = (id) => {
    } else if (counter === -1) counter = 3 // if we are at the start of the list a try to go back we want to go to the back of the list
 
    // render based on new counter
-   render()
+   return render()
 
 }
 

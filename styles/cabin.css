@@ -1,0 +1,62 @@
+.about-slide-header,
+.about-slide-paragraph,
+.cabin-about-paragraph {
+   animation: slide-up 1s ease-in-out;
+}
+
+.feature-container {
+   animation: slide-up ease-in-out;
+   cursor: pointer;
+   background-color: white;
+   border-radius: 0.5vw;
+   display: flex;
+   padding: 1vw 1.5vw;
+   align-items: center;
+   position: relative;
+}
+
+.feature-icon {
+   width: 3vw;
+   height: 3vw;
+   object-fit: contain;
+   margin-right: 1vw;
+}
+
+.feature-description {
+   animation-name: feature-slide-left;
+   margin: 0;
+   font-size: 1vw;
+}
+
+.feature-container-bubble {
+   opacity: 0;
+   transition-duration: 250ms;
+   transform: scale(0%);
+   position: absolute;
+   bottom: -3vw;
+   background-color: #3da9fc;
+   color: white;
+   padding: 1vw 1.5vw;
+   border-radius: 0.5vw;
+   pointer-events: none;
+   white-space: nowrap;
+   text-align: center;
+   font-weight: 600;
+}
+
+.feature-container:hover .feature-container-bubble {
+   opacity: 1;
+   transition-duration: 250ms;
+   transform: scale(100%);
+}
+
+.cabin-about-paragraph {
+   width: 100%;
+   background-color: white;
+   height: 12.5vw;
+   margin-top: 5vw;
+   border-radius: 2vw;
+   padding: 2vw;
+   font-size: 1vw;
+   font-weight: 600;
+}

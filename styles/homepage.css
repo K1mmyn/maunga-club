@@ -1,0 +1,71 @@
+.company-logo {
+   animation-name: button-slide-left;
+   animation-duration: 1s;
+   animation-timing-function: ease-in-out;
+   width: 15vw;
+   margin-left: 2vw;
+}
+
+.booking-button {
+   animation-name: button-slide-right;
+   animation-duration: 1s;
+   animation-timing-function: ease-in-out;
+   margin-right: 2vw;
+   padding: 1.25vw 2vw;
+   border-radius: 2vw;
+   font-size: 1.5vw;
+   font-weight: bolder;
+   font-style: italic;
+   border: none;
+   color: white;
+   background-color: #3da9fc;
+   cursor: pointer;
+   transition-duration: 200ms;
+}
+
+.booking-button:hover,
+.homepage-booking-container-button:hover,
+.sign-in-button:hover {
+   background: black;
+   transition-duration: 250ms;
+}
+
+.homepage-booking-container {
+   width: 10vw;
+   height: 10vw;
+   background-color: white;
+   border-radius: 1.25vw;
+   color: #3da9fc;
+   padding: 1vw;
+   font-size: 1vw;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   animation-name: home-page-slide-bottom;
+   animation-timing-function: ease-in-out;
+   transition-duration: 200ms;
+}
+
+.homepage-booking-container:hover {
+   transform: translateY(-10%);
+   transition-duration: 200ms;
+}
+
+.homepage-booking-container p,
+.homepage-booking-container h3,
+.homepage-booking-container button {
+   margin: 0;
+}
+
+.homepage-booking-container-button {
+   border: none;
+   background-color: #3da9fc;
+   color: white;
+   padding: 0.5vw 1.5vw;
+   font-size: 1.25vw;
+   font-weight: 700;
+   border-radius: 1.5vw;
+   cursor: pointer;
+   transition-duration: 200ms;
+}

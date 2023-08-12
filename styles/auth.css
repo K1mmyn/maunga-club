@@ -1,0 +1,100 @@
+.login-container {
+   height: 60vw;
+   display: flex;
+   flex-direction: column;
+
+}
+
+.login-label {
+   margin-bottom: 2vw;
+   font-weight: bold;
+   font-size: 2.5vw;
+   font-style: italic;
+   color: #5F6C7B;
+}
+
+.login-input {
+   color: #5F6C7B;
+   width: 100%;
+   border: none;
+   height: 4vw;
+   border-radius: 1vw;
+   text-indent: 2vw;
+   font-size: 1.5vw;
+   color: black;
+   font-weight: 600;
+   outline: none;
+   margin-bottom: 2vw;
+}
+
+.login-input::placeholder {
+   color: #5F6C7B;
+   font-size: 1.5vw;
+   font-weight: 600;
+}
+
+.form-login-button {
+   width: 100%;
+   margin-bottom: 1vw;
+}
+
+.sign-in-button {
+   padding: 2vw 4vw;
+   font-size: 2vw;
+   background-color: #3da9fc;
+   border-radius: 1vw;
+   color: white;
+   border: none;
+   font-weight: bold;
+   cursor: pointer;
+   font-weight: 900;
+   transition-duration: 250ms;
+}
+
+.login-nav-div {
+   cursor: pointer;
+   width: 100%;
+   display: flex;
+   font-size: 1.25vw;
+   font-weight: 700;
+   font-style: italic;
+   color: #5F6C7B;
+}
+
+.login-nav-div span:hover {
+   text-decoration: underline;
+}
+
+input[type="file"] {
+   cursor: pointer;
+   font-weight: 600;
+   background-color: white;
+   margin-bottom: 2vw;
+   border-radius: 1vw;
+   font-size: 1.5vw;
+   outline: none;
+   white-space: nowrap;
+   border: none;
+   font-size: 1.5vw;
+}
+
+::-webkit-file-upload-button {
+   color: white;
+   border-radius: 1vw;
+   border-top-right-radius: 0;
+   border-bottom-right-radius: 0;
+   margin-right: 1vw;
+   outline: none;
+   padding: 1.15vw;
+   border: none;
+   transition-duration: 250ms;
+   cursor: pointer;
+   font-weight: 600;
+   background-color: #3da9fc;
+}
+
+::-webkit-file-upload-button:hover {
+   background-color: black;
+   content: "Browse..";
+   transition-duration: 250ms;
+}

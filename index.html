@@ -4,7 +4,10 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Maunga Club</title>
-   <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="styles/global.css">
+   <link rel="stylesheet" href="styles/cabin.css">
+   <link rel="stylesheet" href="styles/homepage.css">
+   <link rel="stylesheet" href="styles/auth.css">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link
@@ -13,7 +16,7 @@
    <script src="aboutSlideAndCabinRender.js" defer></script>
 </head>
 <body style="background-color: #90b4ce;">
-   <section style="border-color: black; border-width: 2px; width: 100vw; height: 100vh; background-image: url('/images/mountain_view_1.jpg'); background-repeat: no-repeat; background-size: cover; background-position: top; background-color: grey; background-blend-mode: multiply; position: relative; background-attachment: fixed;">
+   <section style="border-color: black; border-width: 2px; width: 100vw; height: 60vw; background-image: url('/images/mountain_view_1.jpg'); background-repeat: no-repeat; background-size: cover; background-position: top; background-color: grey; background-blend-mode: multiply; position: relative; background-attachment: fixed;">
 
       <!-- Logo & Book button -->
       <div style="position: absolute; top: 3vh; display: flex; justify-content: space-between; width: 100%; align-items: center;">
@@ -74,7 +77,8 @@
    <!-- About slides and cabin slides -->
 
    <!-- About slide -->
-   <!-- Use inLine style because it only happens once -->
+   <!-- Use inline style because it only happens once -->
+   <!-- TODO: CHANGE 100VH TO 60VW -->
 
    <section style="width: 100vw; height: 100vh; padding: 7.5vw 0vw; position: relative; display: flex; align-items: center; justify-content: space-around;">
       <div style="cursor: pointer; padding-left: 5vw;">
@@ -83,7 +87,7 @@
          </div>
       </div>
       <div style="align-self: flex-start; width: 60vw;" id="about-slide">
-         test
+         
       </div>
       <div style="cursor: pointer; padding-right: 5vw;">
          <div style="font-size: 2vw; color: white; background-color: #3da9fc; border: none; padding: 1vw 1.25vw; border-radius: 20vw; " onclick="counterFunc('+1')">
@@ -91,5 +95,85 @@
          </div>
       </div>
    </section>
+
+   <div id="booking-auth-div">
+      
+   </div>
+
+   <section class="login-container" style="width: 100vw; align-items: center;  justify-content: center; padding-bottom: 10vw;">
+      <h1 style="margin: 2vw; margin-top: 0;">SIGN IN TO BOOK</h1>
+      <button  class="sign-in-button" onclick="changeAuthMode('login')">CLICK TO SIGN IN !</button>
+   </section> 
+
+   <section class="login-container" style="width: 65vw; padding: 8vw 7vw;">
+      <h1 style="margin: 0; margin-bottom: 3vw;">SIGN IN</h1>
+      <form style="width: 100%; display: flex; flex-direction: column;">
+         <label for="email"  class="login-label">EMAIL</label>
+         <input type="email" name="email" placeholder="Email..." class="login-input" >
+         <label for="password"  class="login-label">PASSWORD</label>
+         <input type="password" name="password" placeholder="************" class="login-input" >
+      </form>
+      <button  class="sign-in-button form-login-button" style="font-style: italic;">SIGN IN !</button>
+      <div style="justify-content: space-between ;" class="login-nav-div">
+         <span>
+            CREATE AN ACCOUNT?
+         </span>
+         <span style="color: #094067;">
+            FORGOT PASSWORD?
+         </span>
+      </div>
+   </section>
+   
+   <section class="login-container" style="width: 100vw; padding: 5vw 7vw; ">
+      <h1 style="margin: 0; margin-bottom: 3vw; display: block;">REGISTER</h1>
+      <form style="display: flex; justify-content: space-between;">
+         <div style="display: flex; flex-direction: column; width: 42.5vw;">
+            <label for="email"  class="login-label" style="column-span: none;">EMAIL</label>
+            <input type="email" name="email" placeholder="Example@example.com..." class="login-input" >
+            <label for="fullName"  class="login-label">Full Name</label>
+            <input type="text" name="fullName" placeholder="John Doe" class="login-input" >
+            <label for="proofOfAddress"  class="login-label">Proof of Adresss</label>
+            <input type="file" name="proofOfAddress"  class="input-test"  >
+         </div>
+         <div style="display: flex; flex-direction: column; width: 42.5vw;">
+            <label for="password"  class="login-label">PASSWORD</label>
+            <input type="password" name="password" placeholder="************" class="login-input" >
+            <label for="address"  class="login-label" style="column-span: none;">Address</label>
+            <input type="text" name="text" placeholder="275 Ormiston Road, Auckland 2016..." class="login-input" >
+            <label for="proofOfID"  class="login-label">Proof of ID</label>
+            <input type="file" name="proofOfID"  class="input-test"  >
+         </div>
+      </form>
+      <button  class="sign-in-button form-login-button" style="font-style: italic;">REGISTER !</button>
+      <div class="login-nav-div">
+         <span style="margin-right: 0.5vw;">
+            ALREADY HAVE AN ACCOUNT?
+         </span>
+         <span style="color: #EF4565;">
+            LOG IN
+         </span>
+      </div>
+   </section>
+
+   <section class="login-container" style="width: 65vw; padding: 10vw 7vw; ">
+      <h1 style="margin: 0; margin-bottom: 3vw;">RESET PASSWORD</h1>
+      <form style="width: 100%; display: flex; flex-direction: column;">
+         <label for="email" class="login-label" style="font-size: 2vw !important;">Forgotten your password? Enter your email address below, and we'll send you an e-mail allowing you to reset it.</label>
+         <input type="email" name="email" placeholder="example@example.com" class="login-input">
+      </form>
+      <button class="sign-in-button form-login-button" style="font-style: italic;">RESET PASSWORD !</button>
+      <div
+         style="justify-content: space-between;" 
+         class="login-nav-div">
+         <span style="color: #094067;">
+            CREATE AN ACCOUNT?
+         </span>
+         <span style="color: #094067;">
+            LOG IN?
+         </span>
+      </div>
+   </section> 
+   
+
 </body>
 </html>
