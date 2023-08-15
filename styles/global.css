@@ -71,6 +71,17 @@
    }   
 }
 
+@keyframes booking-slide-up {
+   from {
+      transform: translateY(20%);
+      opacity: 0;
+   }
+   to {
+      transform: translateY(0%);
+      opacity: 1;
+   }   
+}
+
 /* @media (min-aspect-ratio: 9/16) {
    h1 {
       font-size: 2vw;

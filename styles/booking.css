@@ -1,7 +1,7 @@
 #calendar {
    display: grid;
    grid-template-columns: 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw;
-   grid-template-rows: 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw;
+   grid-template-rows: 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw;
    gap: 1vw;
    place-content: center;
 }
@@ -31,14 +31,13 @@
    width: 16vw;
    height: 16vw;
    border-radius: 1.5vw;
-   background-color: #7DB542;
    display: flex;
    justify-content: center;
    align-items: center;
    font-size: 2vw;
    font-weight: 700;
    color: white;
-   cursor: cell;
+   animation: booking-slide-up ease-in-out;
 }
 
 .booking-hover-button {
