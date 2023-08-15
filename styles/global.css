@@ -60,7 +60,7 @@
    }   
 }
 
-@keyframes slide-up-further {
+@keyframes slide-up-navigation {
    from {
       transform: translateY(250%);
       opacity: 0;
@@ -79,6 +79,7 @@
 
 * {
    box-sizing: border-box;
+   font-size: 1vw;
 }
 
 body {

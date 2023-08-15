@@ -9,8 +9,8 @@
    animation: slide-up 0.8s ease-in-out;
 }
 
-.login-container span {
-      animation: slide-up-further 1s ease-in-out;
+.login-nav-div span {
+   animation: slide-up-navigation 1s ease-in-out;
 }
 
 .login-label {

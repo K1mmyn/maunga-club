@@ -1,0 +1,67 @@
+#calendar {
+   display: grid;
+   grid-template-columns: 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw;
+   grid-template-rows: 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw;
+   gap: 1vw;
+   place-content: center;
+}
+
+#calendar div {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 2vw;
+   font-weight: 600;
+   cursor: pointer;
+   transition-duration: 250ms;
+}
+
+#calendar div:hover {
+   transition-duration: 250ms;
+   background-color: #5F6C7B;
+}
+
+.booking-container {
+   display: flex;
+   justify-content: space-between;
+}
+
+.booking-container div {
+   position: relative;
+   width: 16vw;
+   height: 16vw;
+   border-radius: 1.5vw;
+   background-color: #7DB542;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 2vw;
+   font-weight: 700;
+   color: white;
+   cursor: cell;
+}
+
+.booking-hover-button {
+   cursor: pointer;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   z-index: 10;
+   background-color: #3da9fc;
+   border-radius: 1.5vw;
+   justify-content: center;
+   display: flex;
+   align-items: center;
+   font-size: 2vw;
+   font-weight: 700;
+   color: white;
+   opacity: 0;
+   transition-duration: 250ms;
+}
+
+.booking-container div:hover .booking-hover-button {
+   transition-duration: 250ms;
+   opacity: 1;
+}

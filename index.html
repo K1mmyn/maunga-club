@@ -15,22 +15,7 @@
       rel="stylesheet">
    <script src="aboutSlideAndCabinRender.js" defer></script>
    <script src="auth.js" defer></script>
-   <style>
-      #calendar div {
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         border-radius: 2vw;
-         font-weight: 600;
-         cursor: pointer;
-         transition-duration: 250ms;
-      }
-
-      #calendar div:hover {
-         transition-duration: 250ms;
-         background-color: #5F6C7B;
-      }
-   </style>
+   <link rel="stylesheet" href="styles/booking.css">
 </head>
 <body style="background-color: #90b4ce;">
    <section style="border-color: black; border-width: 2px; width: 100vw; height: 57.5vw; background-image: url('/images/mountain_view_1.jpg'); background-repeat: no-repeat; background-size: cover; background-position: top; background-color: grey; background-blend-mode: multiply; position: relative; background-attachment: fixed;">
@@ -132,7 +117,7 @@
                      </span>
                   </div>
                </div>
-               <div style="display: grid; grid-template-columns: 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw; grid-template-rows: 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw 2.25vw; gap: 1vw; place-content: center;" id="calendar">
+               <div id="calendar">
                   <div>
                      S
                   </div>
@@ -289,15 +274,24 @@
          <div style="width: 55.5vw; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
             <div style="width: 100%; height: 60%; background-color: white; border-radius: 1vw; display: flex;flex-direction: column; padding: 3vw; justify-content: space-between;">
                <h3 style="margin: 0; font-size: 3vw; ">FRIDAY 1 AUGUST</h3>
-               <div style="display: flex; justify-content: space-between;">
-                  <div style="width: 16vw; height: 16vw; background-color: #3da9fc; border-radius: 1.5vw; background-color: #7DB542; display: flex; justify-content: center; align-items: center; font-size: 2vw; font-weight: 700; color: white;">
+               <div  class="booking-container">
+                  <div>
                      KERERŪ 
+                     <section class="booking-hover-button">
+                        BOOK !
+                     </section>
                   </div>
-                  <div style="width: 16vw; height: 16vw; background-color: #3da9fc; border-radius: 1.5vw; background-color: #7DB542; display: flex; justify-content: center; align-items: center; font-size: 2vw; font-weight: 700; color: white;">
+                  <div>
                      PŪKEKO 
+                     <section class="booking-hover-button">
+                        BOOK !
+                     </section>
                   </div>
-                  <div style="width: 16vw; height: 16vw; background-color: #3da9fc; border-radius: 1.5vw; background-color: #7DB542; display: flex; justify-content: center; align-items: center; font-size: 2vw; font-weight: 700; color: white;">
+                  <div>
                      KĀKĀPO 
+                     <section class="booking-hover-button">
+                        BOOK !
+                     </section>
                   </div>
                </div>
             </div>

@@ -8,7 +8,19 @@ const changeAuthMode = (authModeID) => {
    console.log(currentAuthMode)
 }
 
-const onLoginSubmit = () => { }
+const onLoginSubmit = (event) => {
+   // const userEmail = document.getElementById("login-email-input")
+   // const userPassword = document.getElementById("login-password-input")
+
+   // const newUser = {
+   //    id: Math.random(),
+   //    email: userEmail,
+   //    password: userPassword,
+   // }
+
+   // localStorage.getItem("user-auth")
+
+}
 
 const onRegisterSubmit = () => { }
 
