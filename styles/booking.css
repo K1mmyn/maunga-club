@@ -64,3 +64,16 @@
    transition-duration: 250ms;
    opacity: 1;
 }
+
+.month-arrows {
+   cursor: pointer;
+   font-size: 2vw;
+}
+
+.calendar-colours {
+   margin-right: 1vw;
+   border-radius: 0.75vw;
+   animation: slide-up 1s ease-in-out;
+   width: 3vw;
+   height: 3vw;
+}
