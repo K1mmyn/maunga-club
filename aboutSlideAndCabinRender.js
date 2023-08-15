@@ -90,13 +90,7 @@ const aboutSlideAndCabinSlideData = [
 
 
 let counter = 0;
-let currentAuthMode = "";
 const aboutSlide = document.querySelector("#about-slide");
-
-const changeAuthMode = (authModeID) => {
-   currentAuthMode = authModeID;
-   console.log(currentAuthMode)
-}
 
 // About slide & cabin rendering function
 

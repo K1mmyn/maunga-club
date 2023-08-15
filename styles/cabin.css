@@ -1,11 +1,10 @@
 .about-slide-header,
 .about-slide-paragraph,
-.cabin-about-paragraph {
+.cabin-about-paragraph, .feature-container {
    animation: slide-up 1s ease-in-out;
 }
 
 .feature-container {
-   animation: slide-up ease-in-out;
    cursor: pointer;
    background-color: white;
    border-radius: 0.5vw;
@@ -24,6 +23,7 @@
 
 .feature-description {
    animation-name: feature-slide-left;
+   animation-timing-function: ease-in-out;
    margin: 0;
    font-size: 1vw;
 }

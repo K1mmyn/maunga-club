@@ -23,9 +23,7 @@
    transition-duration: 200ms;
 }
 
-.booking-button:hover,
-.homepage-booking-container-button:hover,
-.sign-in-button:hover {
+.booking-button:hover, .homepage-booking-container-button:hover, .sign-in-button:hover{
    background: black;
    transition-duration: 250ms;
 }
@@ -52,9 +50,7 @@
    transition-duration: 200ms;
 }
 
-.homepage-booking-container p,
-.homepage-booking-container h3,
-.homepage-booking-container button {
+.homepage-booking-container p, .homepage-booking-container h3, .homepage-booking-container button {
    margin: 0;
 }
 

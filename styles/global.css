@@ -49,6 +49,28 @@
    }   
 }
 
+@keyframes slide-up-extended {
+   from {
+      transform: translateY(120%);
+      opacity: 0;
+   }
+   to {
+      transform: translateY(0%);
+      opacity: 1;
+   }   
+}
+
+@keyframes slide-up-further {
+   from {
+      transform: translateY(250%);
+      opacity: 0;
+   }
+   to {
+      transform: translateY(0%);
+      opacity: 1;
+   }   
+}
+
 /* @media (min-aspect-ratio: 9/16) {
    h1 {
       font-size: 2vw;

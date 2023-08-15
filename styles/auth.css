@@ -2,7 +2,15 @@
    height: 60vw;
    display: flex;
    flex-direction: column;
+   justify-content: center;
+}
 
+.login-container h1, .login-container button, .login-container input, .login-container label {
+   animation: slide-up 0.8s ease-in-out;
+}
+
+.login-container span {
+      animation: slide-up-further 1s ease-in-out;
 }
 
 .login-label {
@@ -60,6 +68,8 @@
    font-style: italic;
    color: #5F6C7B;
 }
+
+
 
 .login-nav-div span:hover {
    text-decoration: underline;
