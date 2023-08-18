@@ -9,18 +9,39 @@ const changeAuthMode = (authModeID) => {
 }
 
 const onLoginSubmit = (event) => {
-   // const userEmail = document.getElementById("user-email")
-   // const userPassword = document.getElementById("user-password")
 
-   // const newUser = {
-   //    id: Math.random(),
-   //    email: userEmail,
-   //    password: userPassword,
-   // }
+   event.preventDefault();
+   const userEmail = document.getElementById("user-email").value
+   const userPassword = document.getElementById("user-password").value
 
-   // localStorage.getItem("user-auth")
+   if (!userEmail || !userPassword) {
+      return alert("Please fill out all fields")
+   }
 
+   const allUsersInLocalStorage = JSON.parse(localStorage.getItem("user-db"))
+
+   if (!allUsersInLocalStorage) {
+      return alert("User not found")
+   }
+
+   const userToFind = allUsersInLocalStorage.find(user => user.userEmail === userEmail && user.userPassword === userPassword)
+
+   if (!userToFind) {
+      return alert("User not found")
+   }
+
+   return alert("User found")
 }
+// const userEmail = document.getElementById("user-email")
+// const userPassword = document.getElementById("user-password")
+
+// const newUser = {
+//    id: Math.random(),
+//    email: userEmail,
+//    password: userPassword,
+// }
+
+// localStorage.getItem("user-auth")
 
 const onRegisterSubmit = (event) => {
    event.preventDefault();
@@ -105,7 +126,7 @@ const renderAuth = () => {
       authDiv.innerHTML = `
          <div class="login-container" style="width: 65vw; padding: 8vw 7vw;">
             <h1 style="margin: 0; margin-bottom: 3vw;">SIGN IN</h1>
-            <form style="width: 100%; display: flex; flex-direction: column;">
+            <form style="width: 100%; display: flex; flex-direction: column;" onsubmit="onLoginSubmit(event)">
                <label for="email"  class="login-label" ">EMAIL</label>
                <input type="email" name="email" placeholder="Email..." class="login-input" id="user-email">
                <label for="password"  class="login-label" >PASSWORD</label>

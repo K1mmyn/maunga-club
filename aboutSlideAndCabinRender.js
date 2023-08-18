@@ -101,7 +101,7 @@ const render = () => {
 
       return aboutSlide.innerHTML = `
          <div style="display: flex; flex-direction: column; justify-content: start; align-items: center; padding: 0vw 5vw;" >
-            <h1 style="font-size: 5vw; color: #094067; " class="about-slide-header">${aboutSlideAndCabinSlideData[counter].companyName}</h1>
+            <h1 style="font-size: 5vw; color: black; " class="about-slide-header">${aboutSlideAndCabinSlideData[counter].companyName}</h1>
             <h3 style="font-size: 1.5vw; text-align: center; color: #5f6c7b;" class="about-slide-paragraph">${aboutSlideAndCabinSlideData[counter].aboutParagraph}</h3>
          </div>
       `
