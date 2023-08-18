@@ -44,7 +44,7 @@
    justify-content: space-between;
 }
 
-.booking-container div {
+.booking-container .div {
    position: relative;
    width: 16vw;
    height: 16vw;
@@ -78,7 +78,7 @@
    transition-duration: 250ms;
 }
 
-.booking-container div:hover .booking-hover-button {
+.booking-container .div:hover .booking-hover-button {
    transition-duration: 250ms;
    opacity: 1;
 }

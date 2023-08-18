@@ -1,17 +1,16 @@
 
 let currentAuthMode = "";
-let user = true;
+let user = null;
 const authDiv = document.getElementById("booking-auth-div")
 
 const changeAuthMode = (authModeID) => {
    currentAuthMode = authModeID;
-   renderAuth()
-   console.log(currentAuthMode)
+   renderAuth();
 }
 
 const onLoginSubmit = (event) => {
-   // const userEmail = document.getElementById("login-email-input")
-   // const userPassword = document.getElementById("login-password-input")
+   // const userEmail = document.getElementById("user-email")
+   // const userPassword = document.getElementById("user-password")
 
    // const newUser = {
    //    id: Math.random(),
@@ -23,7 +22,65 @@ const onLoginSubmit = (event) => {
 
 }
 
-const onRegisterSubmit = () => { }
+const onRegisterSubmit = (event) => {
+   event.preventDefault();
+
+   // String values
+   const userEmail = document.getElementById("user-email").value
+   const userPassword = document.getElementById("user-password").value
+   const userFullName = document.getElementById("user-full-name").value
+   const userAddress = document.getElementById("user-address").value
+
+   // Image Values
+   const userProofOfAddress = document.getElementById("user-proof-of-address").files[0]
+   const userProofOfID = document.getElementById("user-proof-of-id").files[0]
+
+   // Checking if every field is filled in
+   if (!userEmail || !userPassword || !userFullName || !userAddress || !userProofOfAddress || !userProofOfID) {
+      return alert("Please fill all fields")
+   }
+
+   // Creating new user Object
+   const newUser = {
+      "userEmail": userEmail,
+      "userPassword": userPassword,
+      "userFullName": userFullName,
+      "userAddress": userAddress,
+      "userProofOfAddress": userProofOfAddress,
+      "userProofOfID": userProofOfID,
+      "userCreationDate": new Date(),
+      "userID": Math.random()
+   }
+
+   // Previous data in localStorage
+   const prevData = JSON.parse(localStorage.getItem("user-db"))
+
+   if (prevData === null) {
+      // If there previousData is null it means there arent any users 
+      user = newUser
+      alert(`Welcome to Maunga Club ${newUser.userFullName.charAt(0).toUpperCase() + newUser.userFullName.slice(1)} 
+Book for your next adventure now!`)
+      localStorage.setItem("user-db", JSON.stringify([newUser]))
+      return renderCalendar()
+   }
+
+   // Checking to see if emails are already taken
+   for (let i = 0; i < prevData.length; i++) {
+      if (prevData[i].userEmail === newUser.userEmail) {
+         return alert("This email is already taken")
+      }
+   }
+
+   // Adding newUser to previous Data
+   prevData.push(newUser);
+
+   // Saving data to localStorage
+   localStorage.setItem("user-db", JSON.stringify(prevData))
+   user = newUser
+   alert(`Welcome to Maunga Club ${newUser.userFullName.charAt(0).toUpperCase() + newUser.userFullName.slice(1)} 
+Book for your next adventure now!`)
+   return renderCalendar()
+}
 
 const onResetPassword = (event) => {
    event.preventDefault();
@@ -37,22 +94,22 @@ const onResetPassword = (event) => {
 const renderAuth = () => {
    if (!currentAuthMode) {
       authDiv.innerHTML = `
-      <section class="login-container" style="width: 100vw; align-items: center;  justify-content: center; padding-bottom: 10vw;">
+      <div class="login-container" style="width: 100vw; align-items: center;  justify-content: center; padding-bottom: 10vw;">
          <h1 style="margin: 2vw; animation-name: slide-up; animation-duration: 1s; animation-timing-function: ease-in-out;">SIGN IN TO BOOK</h1>
          <button  class="sign-in-button" onclick="changeAuthMode('login')" style="animation-name: slide-up-extended; animation-duration: 1s; animation-timing-function: ease-in-out;">CLICK TO SIGN IN !</button>
-      </section> 
+      </div> 
       `
    }
 
    if (currentAuthMode === "login") {
       authDiv.innerHTML = `
-         <section class="login-container" style="width: 65vw; padding: 8vw 7vw;">
+         <div class="login-container" style="width: 65vw; padding: 8vw 7vw;">
             <h1 style="margin: 0; margin-bottom: 3vw;">SIGN IN</h1>
             <form style="width: 100%; display: flex; flex-direction: column;">
                <label for="email"  class="login-label" ">EMAIL</label>
-               <input type="email" name="email" placeholder="Email..." class="login-input" id="login-email-input">
+               <input type="email" name="email" placeholder="Email..." class="login-input" id="user-email">
                <label for="password"  class="login-label" >PASSWORD</label>
-               <input type="password" name="password" placeholder="************" class="login-input"  id="login-password-input">
+               <input type="password" name="password" placeholder="************" class="login-input"  id="user-password">
                <button  class="sign-in-button form-login-button" type="submit" style="font-style: italic; animation: slide-up 1s ease-in-out;">SIGN IN !</button>
             </form>
             <div style="justify-content: space-between ;" class="login-nav-div" >
@@ -63,29 +120,29 @@ const renderAuth = () => {
                   FORGOT PASSWORD?
                </span>
             </div>
-         </section>
+         </div>
       `
    } else if (currentAuthMode === "register") {
       authDiv.innerHTML = `
-         <section class="login-container" style="width: 100vw; padding: 5vw 7vw; ">
+         <div class="login-container" style="width: 100vw; padding: 5vw 7vw; ">
             <h1 style="margin: 0; margin-bottom: 3vw; display: block;">REGISTER</h1>
-            <form style="display: flex; flex-direction: column;">
+            <form style="display: flex; flex-direction: column;" onsubmit='onRegisterSubmit(event)'>
                <div style="display: flex; justify-content: space-between;">
                   <div style="display: flex; flex-direction: column; width: 42.5vw;">
                      <label for="email"  class="login-label" style="column-span: none;">EMAIL</label>
-                     <input type="email" name="email" placeholder="Example@example.com..." class="login-input" >
+                     <input type="email" name="email" placeholder="Example@example.com..." id='user-email' class="login-input" autocomplete="off">
                      <label for="fullName"  class="login-label">Full Name</label>
-                     <input type="text" name="fullName" placeholder="John Doe" class="login-input" >
+                     <input type="text" name="fullName" placeholder="John Doe" class="login-input" id='user-full-name'>
                      <label for="proofOfAddress"  class="login-label">Proof of Adresss</label>
-                     <input type="file" name="proofOfAddress"  class="input-test"  >
+                     <input type="file" "accept="image/*" name="proofOfAddress"  class="input-test"  id='user-proof-of-address'>
                   </div>
                   <div style="display: flex; flex-direction: column; width: 42.5vw;">
                      <label for="password"  class="login-label">PASSWORD</label>
-                     <input type="password" name="password" placeholder="************" class="login-input" >
+                     <input type="password" name="password" placeholder="************" class="login-input"  id='user-password'>
                      <label for="address"  class="login-label" style="column-span: none;">Address</label>
-                     <input type="text" name="text" placeholder="275 Ormiston Road, Auckland 2016..." class="login-input" >
+                     <input type="text" name="text" placeholder="275 Ormiston Road, Auckland 2016..." class="login-input" id='user-address'>
                      <label for="proofOfID"  class="login-label">Proof of ID</label>
-                     <input type="file" name="proofOfID"  class="input-test"  >
+                     <input type="file" "accept="image/*" name="proofOfID"  class="input-test"  id='user-proof-of-id'>
                   </div>
                </div>
                <button  class="sign-in-button form-login-button" type="submit" style="font-style: italic;">REGISTER !</button>
@@ -98,11 +155,11 @@ const renderAuth = () => {
                   LOG IN
                </span>
             </div>
-         </section>
+         </div>
    `
    } else if (currentAuthMode === "resetPassword") {
       authDiv.innerHTML = `
-       <section class="login-container" style="width: 65vw; padding: 10vw 7vw; ">
+       <div class="login-container" style="width: 65vw; padding: 10vw 7vw; ">
          <h1 style="margin: 0; margin-bottom: 3vw;">RESET PASSWORD</h1>
          <form style="width: 100%; display: flex; flex-direction: column;" onsubmit='onResetPassword(event)'>
             <label for="email" class="login-label" style="font-size: 2vw !important;">Forgotten your password? Enter your email address below, and we'll send you an e-mail allowing you to reset it.</label>
@@ -119,7 +176,7 @@ const renderAuth = () => {
                LOG IN?
             </span>
          </div>
-      </section>
+      </div>
    `
    }
 }
@@ -147,25 +204,25 @@ const dateAvailabilities = () => {
    for (let i = 0; i < cabins.length; i++) {
       if (dayHeader !== "Sunday" && dayHeader !== "Friday" && dayHeader !== "Saturday") {
          return booking += `
-            <div style="background-color: #EF4565; animation-duration: 1s; width:100%;">
+            <div style="background-color: #EF4565; width:100%; animation: booking-slide-up 1s ease-in-out" class='div'>
                UNAVAILABLE DATE
             </div>
          `
-
       }
+
       if ((day + i) % 3 > 0) {
          booking += `
-            <div style="background-color: #7DB542; animation-duration: 1s;">
+            <div style="background-color: #7DB542; animation-duration: 1s;" class="div">
                ${cabins[i]}
-               <a href='booking.html' target='blank'> 
-                  <section class="booking-hover-button">
+               <a href='booking.html' target='blank' onclick='checkPreviousDates()'> 
+                  <div class="booking-hover-button">
                      BOOK !
-                  </section>
+                  </div>
                </a>
             </div>
          `
       } else booking += `
-         <div style="background-color: #EF4565; animation-duration: 1s;">
+         <div style="background-color: #EF4565; animation-duration: 1s;" class="div">
             ${cabins[i]}
          </div>
       `
@@ -205,10 +262,14 @@ const setDayHeader = (dayID) => {
 }
 
 const handleCalendarDateClick = (dayID, dayParam) => {
+   if (currentMonth < new Date().getMonth()) {
+      alert("Booking for this date may not be available as it has already passed")
+   }
    day = dayParam
    arrowClicks = 0
    setDayHeader(dayID)
    renderCalendar()
+   checkPreviousDates()
 }
 
 const handleBetweenMonthsClick = (id, date, dayParam) => {
@@ -301,7 +362,7 @@ const renderCalendar = () => {
 
       calendar += `
       <div style="animation-name: slide-up-extended; animation-duration: ${calendarAnimationDuration}ms; transition-timing-function: ease-in-out; " onclick="handleCalendarDateClick(${dayCounter}, ${i})">
-      ${i}
+         ${i}
       </div> 
       `
       calendarAnimationDuration += 50
@@ -325,10 +386,10 @@ const renderCalendar = () => {
 
    calendarContainer.innerHTML = `
       <div style="padding: 5vw; display: flex; justify-content: space-between; width: 100vw; height: 57.5vw; border: 1px solid black;">
-         <section style="width: 27.5vw; height: 100%; background-color: white; border-radius: 2vw; display: flex; flex-direction: column; justify-content: space-around; padding: 2vw">
+         <div style="width: 27.5vw; height: 100%; background-color: white; border-radius: 2vw; display: flex; flex-direction: column; justify-content: space-around; padding: 2vw">
             <div style="width: 100%; height: 60%; display: flex; flex-direction: column;" id="calendar-container">
                <div style="width: 100%; display: flex; justify-content: space-between; font-size: 2vw; font-weight: 600; align-items: center; margin-bottom: 2vw; padding: 0vw 1vw;">
-                  <h3 style="margin: 0; font-size: 2vw; animation: slide-up 1s ease-in-out; text-transform: uppercase;">
+                  <h3 style="margin: 0; font-size: 2vw; animation: slide-up 1s ease-in-out; text-transform: uppercase; color: #EF4565;">
                      ${monthsOfTheYear[currentMonth].slice(0, 3)}
                   </h3>
                   <div style="animation: slide-up 1s ease-in-out;">
@@ -368,7 +429,7 @@ const renderCalendar = () => {
                   </h3>
                </div>
             </div>
-         </section>
+         </div>
 
          <div style="width: 55.5vw; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
             <div style="width: 100%; height: 60%; background-color: white; border-radius: 1vw; display: flex;flex-direction: column; padding: 3vw; justify-content: space-between;">

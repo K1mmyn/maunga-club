@@ -99,7 +99,8 @@ const render = () => {
 
       // About slide render
 
-      return aboutSlide.innerHTML = `<div style="display: flex; flex-direction: column; justify-content: start; align-items: center; padding: 0vw 5vw;" >
+      return aboutSlide.innerHTML = `
+         <div style="display: flex; flex-direction: column; justify-content: start; align-items: center; padding: 0vw 5vw;" >
             <h1 style="font-size: 5vw; color: #094067; " class="about-slide-header">${aboutSlideAndCabinSlideData[counter].companyName}</h1>
             <h3 style="font-size: 1.5vw; text-align: center; color: #5f6c7b;" class="about-slide-paragraph">${aboutSlideAndCabinSlideData[counter].aboutParagraph}</h3>
          </div>
@@ -119,7 +120,7 @@ const render = () => {
 
       features += `
             <div  class="feature-container" style='animation-duration: ${animationDuration}s'>
-               <img src='${featuresArray[i].featureIconSRCPath}' alt="checkmark_icon"  class="feature-icon"> 
+               <img src='${featuresArray[i].featureIconSRCPath}' alt="cabin-feature_icon"  class="feature-icon"> 
                <h3 class="feature-description" style='animation-duration: ${animationDuration}s'>
                   ${featuresArray[i].featureDescription.toUpperCase()}
                </h3>
@@ -134,7 +135,7 @@ const render = () => {
    return aboutSlide.innerHTML = `
       <div style="display: flex; flex-direction: column; align-items: center;">
             <div style="display: flex; justify-content: space-around; width: 100%;">
-               <img alt="cabin-photo" src="${aboutSlideAndCabinSlideData[counter].cabinPreviewSRCPath}" style="width: 20vw; height: 20vw; border: 1vw solid white; border-radius: 1.5vw; align-self: flex-end; animation-name: slide-up; animation-duration: 1.2s;"/>
+               <img alt="cabin-exterior-photo" src="${aboutSlideAndCabinSlideData[counter].cabinPreviewSRCPath}" style="width: 20vw; height: 20vw; border: 1vw solid white; border-radius: 1.5vw; align-self: flex-end; animation-name: slide-up; animation-duration: 1.2s;"/>
                <div style="width: 30vw; display: flex; flex-direction: column; ">
                   <h1 style="color: #094067; font-size: 4vw; margin: 0; margin-bottom: 2vw; animation-name: slide-up; animation-duration: 1s;">${aboutSlideAndCabinSlideData[counter].cabinName.toUpperCase()} !</h1>
                   <div style="display: grid; grid-template-columns: 14vw 14vw; column-gap: 2vw; grid-template-rows: 6vw 6vw; row-gap: 2vw;">
