@@ -13,9 +13,11 @@
    <link
       href="https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet">
-   <script src="aboutSlideAndCabinRender.js" defer></script>
    <link rel="stylesheet" href="styles/booking.css">
+   <script src="aboutSlideAndCabinRender.js" defer></script>
    <script src="booking.js" defer></script>
+
+   <!-- Add logo -->
 </head>
 <body style="background-color: #90b4ce;">
    <section style="border-color: black; border-width: 2px; width: 100vw; height: 57.5vw; background-image: url('/images/mountain_view_1.jpg'); background-repeat: no-repeat; background-size: cover; background-position: top; background-color: grey; background-blend-mode: multiply; position: relative; background-attachment: fixed;">
@@ -23,57 +25,15 @@
       <!-- Logo & Book button -->
       <div style="position: absolute; top: 2vw; display: flex; justify-content: space-between; width: 100%; align-items: center;">
          <img src="images/Maunga_Club_white.png" alt="company-logo"  class="company-logo">
-         <button class="booking-button">BOOK!</button>
+         <button class="booking-button" onclick="scrollToID('booking-auth-div')">BOOK!</button>
       </div>
 
       <!-- Booking dates -->
 
       <div style="position: absolute; bottom: 12.5vw; width: 100%; display: flex; justify-content: center;">
-         <div style="width: 70%; color: white; display: flex; justify-content: space-around; align-items: center;" >
-            
-               <div class="homepage-booking-container" style="animation-duration: 0.8s;">
-                  <div style="width: 7.5vw; position: absolute; font-size: 1vw;  text-align: center; top: -2vw; font-weight: 700; color: white; display: flex; justify-content: center;">
-                     <h3>
-                        AUG
-                     </h3>
-                  </div>
-                  <h3 >FRI 4</h3>
-                  <p >from</p>
-                  <h3 >$250</h3>
-                  <button class="homepage-booking-container-button">BOOK</button>
-               </div>
-               <div class="homepage-booking-container" style="animation-duration: 1s;">
-                  <h3 >Sat 5</h3>
-                  <p >from</p>
-                  <h3 >$250</h3>
-                  <button class="homepage-booking-container-button">BOOK</button>
-               </div>
-               <div class="homepage-booking-container" style="animation-duration: 1.2s;">
-                  <h3 >SUN 6</h3>
-                  <p >from</p>
-                  <h3 >$250</h3>
-                  <button class="homepage-booking-container-button">BOOK</button>
-               </div>
-               <div class="homepage-booking-container" style="animation-duration: 1.4s;">
-                  <h3 >FRI 11</h3>
-                  <p >from</p>
-                  <h3 >$250</h3>
-                  <button class="homepage-booking-container-button">BOOK</button>
-               </div>
-               <div class="homepage-booking-container" style="animation-duration: 1.6s;">
-                  <h3 >SAT 11</h3>
-                  <p >from</p>
-                  <h3 >$250</h3>
-                  <button class="homepage-booking-container-button">BOOK</button>
-               </div>
-               <div class="homepage-booking-container" style="animation-duration: 1.8s;">
-                  <h3 >PLACE</h3>
-                  <p >HOLDER</p>
-                  <h3 >FOR</h3>
-                  <button class="homepage-booking-container-button">NOW!</button>
-               </div>
-            </div>
+         <div style="width: 70%; color: white; display: flex; justify-content: space-around; align-items: center;" id="available-dates" >
          </div>
+      </div>
    </section>
 
    <!-- About slides and cabin slides -->

@@ -45,6 +45,23 @@
    transition-duration: 200ms;
 }
 
+.homepage-booking-container:last-child {
+   animation-duration: 1.8s;
+   font-size: 1.5vw;
+   text-align: center;
+   font-weight: 700;
+   background-color: #3da9fc;
+   color: white;
+   cursor: pointer;
+   /* font-style: italic; */
+}
+
+.homepage-booking-container:last-child:hover {
+   background-color: black;
+   transition-duration: 200ms;
+
+}
+
 .homepage-booking-container:hover {
    transform: translateY(-10%);
    transition-duration: 200ms;
