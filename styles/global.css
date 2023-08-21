@@ -82,11 +82,22 @@
    }   
 }
 
-/* @media (min-aspect-ratio: 9/16) {
-   h1 {
-      font-size: 2vw;
+@media (min-width: 0px) and (max-width: 960px) {
+   section {
+      height: 50vh !important;
    }
-} */
+}
+
+@media (min-width: 961px) and (max-width: 1200px) { 
+   #homepage {
+      height: 75vh !important;
+   }
+
+   section {
+      height: 75vh !important;
+      padding: 0px;
+   }
+}
 
 * {
    box-sizing: border-box;
@@ -103,4 +114,9 @@ body {
 
 h1 {
    font-size: 5vw;
+}
+
+section {
+   width: 100vw;
+   height: 100vh;
 }

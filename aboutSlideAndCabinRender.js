@@ -87,8 +87,6 @@ const aboutSlideAndCabinSlideData = [
    },
 ];
 
-
-
 let counter = 0;
 const aboutSlide = document.querySelector("#about-slide");
 

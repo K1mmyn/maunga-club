@@ -171,7 +171,7 @@ const renderAuth = () => {
                      <input type="email" name="email" placeholder="Example@example.com..." id='user-email' class="login-input" autocomplete="off">
                      <label for="fullName"  class="login-label">Full Name</label>
                      <input type="text" name="fullName" placeholder="John Doe" class="login-input" id='user-full-name'>
-                     <label for="proofOfAddress"  class="login-label">Proof of Adresss</label>
+                     <label for="proofOfAddress"  class="login-label">Proof of Address</label>
                      <input type="file" "accept="image/*" name="proofOfAddress"  class="input-test"  id='user-proof-of-address'>
                   </div>
                   <div style="display: flex; flex-direction: column; width: 42.5vw;">
@@ -236,7 +236,7 @@ const daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "
 
 let dayCounter = 0
 let dayHeader = daysOfTheWeek[new Date().getDay()];
-let day = new Date().getUTCDate()
+let day = new Date().getDate()
 let booking = ''
 let arrowClicks = 0
 let currentMonth = new Date().getMonth();
