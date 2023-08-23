@@ -1,6 +1,9 @@
 .about-slide-header,
 .about-slide-paragraph,
-.cabin-about-paragraph, .feature-container {
+.cabin-about-paragraph, 
+.feature-container,
+.cabin-gallery,
+.cabin-gallery h3 {
    animation: slide-up 1s ease-in-out;
 }
 
@@ -50,13 +53,37 @@
    transform: scale(100%);
 }
 
-.cabin-about-paragraph {
+.cabin-gallery {
+   margin-top: 5vw;
    width: 100%;
    background-color: white;
-   height: 12.5vw;
-   margin-top: 5vw;
+   height: 20vw;
    border-radius: 2vw;
    padding: 2vw;
+   padding-top: 1.5vw;
    font-size: 1vw;
    font-weight: 600;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.cabin-gallery img {
+   transition-duration: 250ms;
+}
+
+.cabin-gallery img:hover {
+   transform: translateY(-5%);
+   transition-duration: 250ms;
+}
+
+.cabin-image {
+   width: 20vw;
+   height: 20vw;
+   border: 1vw solid white;
+   border-radius: 1.5vw;
+   align-self: flex-end;
+   animation-name: slide-up;
+   animation-duration: 1.2s;
+   cursor: pointer;
 }

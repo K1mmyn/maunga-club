@@ -106,8 +106,12 @@ Book for your next adventure now!`)
    alert(`Welcome to Maunga Club ${newUser.userFullName.charAt(0).toUpperCase() + newUser.userFullName.slice(1)} 
 Book for your next adventure now!`)
 
+   // Sending user to email Maunga Club provided
+   console.log(`Sending ${newUser} to Maunga Club email`)
+
    // Now that users are signed in, They are allowed to find booking dates
    return renderCalendar()
+
 }
 
 const onResetPassword = (event) => {
