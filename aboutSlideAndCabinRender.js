@@ -181,12 +181,12 @@ const render = () => {
 
    }
 
-   animationDuration = 0.8
+   animationDuration = 0.5
 
    for (let i = 0; i < cabinGalleryImages.length; i++) {
-      animationDuration += 0.1
+      animationDuration += 0.25
       gallery += `
-         <img alt="${cabinGalleryImages[i].imgAlt}" src="${cabinGalleryImages[i].cabinImgSRCPath}" style="width: 12.5vw; height: 12.5vw; animation: booking-slide-up 1s ease-in-out; box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;"/>
+         <img alt="${cabinGalleryImages[i].imgAlt}" src="${cabinGalleryImages[i].cabinImgSRCPath}" style="width: 12.5vw; height: 12.5vw; animation: booking-slide-up ${animationDuration}s ease-in-out; box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;"/>
       `
    }
 
