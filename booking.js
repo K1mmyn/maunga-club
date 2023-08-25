@@ -599,7 +599,7 @@ const getClosestAvaliableDate = () => {
       animationDuration += 200
    }
    closestAvailableDates += `
-   <div class="homepage-booking-container" onclick="scrollToID('booking-auth-div')" style="animation-duration: 2400ms;">
+   <div class="homepage-booking-container" onclick="scrollToID('booking-auth-div')">
       BOOK NOW !
    </div>`
    availableDateDiv.innerHTML = closestAvailableDates
